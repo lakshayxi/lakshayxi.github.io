@@ -1,0 +1,172 @@
+export type ContributionStatus = "merged" | "open";
+
+export type OssContribution = {
+  id: string;
+  repository: string;
+  pullRequest: number;
+  language: string;
+  kind: "Bug fix" | "Enhancement" | "Cleanup";
+  status: ContributionStatus;
+  summary: string;
+  summaryHi: string;
+  repositoryUrl: string;
+  issueUrl: string;
+  pullRequestUrl: string;
+  personallyUsed?: boolean;
+};
+
+export const ossContributions = [
+  {
+    id: "pytorch-193422",
+    repository: "pytorch/pytorch",
+    pullRequest: 193422,
+    language: "Python",
+    kind: "Bug fix",
+    status: "merged",
+    summary: "Prevented an Inductor crash by leaving rank-zero cumsum constants to normal lowering.",
+    summaryHi: "Rank-zero cumsum constants को normal lowering पर छोड़कर Inductor crash रोका।",
+    repositoryUrl: "https://github.com/pytorch/pytorch",
+    issueUrl: "https://github.com/pytorch/pytorch/issues/193265",
+    pullRequestUrl: "https://github.com/pytorch/pytorch/pull/193422",
+    personallyUsed: true,
+  },
+  {
+    id: "uv-21131",
+    repository: "astral-sh/uv",
+    pullRequest: 21131,
+    language: "Rust",
+    kind: "Enhancement",
+    status: "merged",
+    summary: "Preserved artifact-to-hash associations in CycloneDX exports by carrying distribution references through the export path.",
+    summaryHi: "CycloneDX exports में distribution references को export path से आगे ले जाकर artifact और hash का सही संबंध बचाया।",
+    repositoryUrl: "https://github.com/astral-sh/uv",
+    issueUrl: "https://github.com/astral-sh/uv/issues/21122",
+    pullRequestUrl: "https://github.com/astral-sh/uv/pull/21131",
+  },
+  {
+    id: "ruff-27738",
+    repository: "astral-sh/ruff",
+    pullRequest: 27738,
+    language: "Rust",
+    kind: "Bug fix",
+    status: "merged",
+    summary: "Made os._exit follow the same public-module handling as the rest of the rule set.",
+    summaryHi: "os._exit को rule set के बाकी public-module handling के साथ consistent बनाया।",
+    repositoryUrl: "https://github.com/astral-sh/ruff",
+    issueUrl: "https://github.com/astral-sh/ruff/issues/18143",
+    pullRequestUrl: "https://github.com/astral-sh/ruff/pull/27738",
+  },
+  {
+    id: "semantica-1003",
+    repository: "semantica-agi/semantica",
+    pullRequest: 1003,
+    language: "TypeScript",
+    kind: "Bug fix",
+    status: "merged",
+    summary: "Stopped temporal requests after a graph load failure while keeping a valid empty graph usable.",
+    summaryHi: "Graph load fail होने पर temporal requests रोकीं, जबकि valid empty graph को usable रखा।",
+    repositoryUrl: "https://github.com/semantica-agi/semantica",
+    issueUrl: "https://github.com/semantica-agi/semantica/issues/982",
+    pullRequestUrl: "https://github.com/semantica-agi/semantica/pull/1003",
+  },
+  {
+    id: "semantica-984",
+    repository: "semantica-agi/semantica",
+    pullRequest: 984,
+    language: "TypeScript",
+    kind: "Cleanup",
+    status: "merged",
+    summary: "Removed an unused graph workspace shell and its dead code path.",
+    summaryHi: "Unused graph workspace shell और उससे जुड़ा dead code path हटाया।",
+    repositoryUrl: "https://github.com/semantica-agi/semantica",
+    issueUrl: "https://github.com/semantica-agi/semantica/issues/981",
+    pullRequestUrl: "https://github.com/semantica-agi/semantica/pull/984",
+  },
+  {
+    id: "claude-code-action-1681",
+    repository: "anthropics/claude-code-action",
+    pullRequest: 1681,
+    language: "TypeScript",
+    kind: "Bug fix",
+    status: "open",
+    summary: "Surfaces buffered comment delivery failures instead of letting them disappear silently.",
+    summaryHi: "Buffered comment delivery failures को चुपचाप गायब होने के बजाय सामने लाता है।",
+    repositoryUrl: "https://github.com/anthropics/claude-code-action",
+    issueUrl: "https://github.com/anthropics/claude-code-action/issues/1679",
+    pullRequestUrl: "https://github.com/anthropics/claude-code-action/pull/1681",
+    personallyUsed: true,
+  },
+  {
+    id: "lighteval-1333",
+    repository: "huggingface/lighteval",
+    pullRequest: 1333,
+    language: "Python",
+    kind: "Bug fix",
+    status: "open",
+    summary: "Fixes the generative evaluation path for the BBEH benchmark.",
+    summaryHi: "BBEH benchmark का generative evaluation path ठीक करता है।",
+    repositoryUrl: "https://github.com/huggingface/lighteval",
+    issueUrl: "https://github.com/huggingface/lighteval/issues/600",
+    pullRequestUrl: "https://github.com/huggingface/lighteval/pull/1333",
+    personallyUsed: true,
+  },
+  {
+    id: "anthropic-go-413",
+    repository: "anthropics/anthropic-sdk-go",
+    pullRequest: 413,
+    language: "Go",
+    kind: "Bug fix",
+    status: "open",
+    summary: "Prevents nested schemas from being corrupted during conversion.",
+    summaryHi: "Conversion के दौरान nested schemas को corrupt होने से रोकता है।",
+    repositoryUrl: "https://github.com/anthropics/anthropic-sdk-go",
+    issueUrl: "https://github.com/anthropics/anthropic-sdk-go/issues/410",
+    pullRequestUrl: "https://github.com/anthropics/anthropic-sdk-go/pull/413",
+  },
+  {
+    id: "openenv-1081",
+    repository: "huggingface/OpenEnv",
+    pullRequest: 1081,
+    language: "Python",
+    kind: "Bug fix",
+    status: "open",
+    summary: "Parses MCP Playground arguments correctly before launching an environment.",
+    summaryHi: "Environment launch होने से पहले MCP Playground arguments को सही तरह parse करता है।",
+    repositoryUrl: "https://github.com/huggingface/OpenEnv",
+    issueUrl: "https://github.com/huggingface/OpenEnv/issues/1080",
+    pullRequestUrl: "https://github.com/huggingface/OpenEnv/pull/1081",
+    personallyUsed: true,
+  },
+  {
+    id: "mermaid-lint-200",
+    repository: "jasonworden/mermaid-lint",
+    pullRequest: 200,
+    language: "TypeScript",
+    kind: "Bug fix",
+    status: "open",
+    summary: "Maps treeView errors back to useful source-line citations.",
+    summaryHi: "treeView errors को useful source-line citations से वापस जोड़ता है।",
+    repositoryUrl: "https://github.com/jasonworden/mermaid-lint",
+    issueUrl: "https://github.com/jasonworden/mermaid-lint/issues/190",
+    pullRequestUrl: "https://github.com/jasonworden/mermaid-lint/pull/200",
+  },
+  {
+    id: "mermaid-lint-197",
+    repository: "jasonworden/mermaid-lint",
+    pullRequest: 197,
+    language: "TypeScript",
+    kind: "Enhancement",
+    status: "open",
+    summary: "Improves the explain command so its command-line behaviour is clearer and more consistent.",
+    summaryHi: "explain command के command-line behaviour को अधिक साफ़ और consistent बनाता है।",
+    repositoryUrl: "https://github.com/jasonworden/mermaid-lint",
+    issueUrl: "https://github.com/jasonworden/mermaid-lint/issues/193",
+    pullRequestUrl: "https://github.com/jasonworden/mermaid-lint/pull/197",
+  },
+] satisfies OssContribution[];
+
+export const ossCounts = {
+  merged: ossContributions.filter((item) => item.status === "merged").length,
+  open: ossContributions.filter((item) => item.status === "open").length,
+  repositories: new Set(ossContributions.map((item) => item.repository)).size,
+};
